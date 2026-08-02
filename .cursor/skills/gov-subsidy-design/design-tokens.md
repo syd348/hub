@@ -27,6 +27,11 @@
 
 PC 바깥 배경: `#E8ECF1`
 
+**Welcome 화면 예외**: 배경이 `--white`(다른 화면은 `--bg`/`--navy` 계열), 브랜드 로고("지원금콕365")는
+이모지 아이콘 대신 래스터 이미지(`src/assets/logo.png`)로 렌더링 — 로고 안에 워드마크·태그라인이
+이미 포함돼 있어 별도 H1/서브 텍스트를 렌더링하지 않는다. features/skip 텍스트는 흰 배경에 맞춰
+`--text-sub`/`--text-muted`로 조정.
+
 ## Typography
 
 - **Font**: `"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, sans-serif`
@@ -34,7 +39,7 @@ PC 바깥 배경: `#E8ECF1`
 
 | Role | Size | Weight | Color |
 |------|------|--------|-------|
-| Welcome H1 | 22px | 600 | white |
+| Welcome H1 | — | — | Welcome 화면은 로고 이미지로 대체, 텍스트 렌더링 없음 |
 | Step question | 20px | 600 | navy |
 | Detail title | 20px | 600 | white |
 | Card title | 15px | 500 | navy |

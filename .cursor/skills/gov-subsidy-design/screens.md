@@ -115,7 +115,8 @@ interface Subsidy {
 
 ## Copy Guidelines (와이어프레임 고정 문구)
 
-- Welcome H1: "내 가게에 딱 맞는 / 지원금을 찾아드려요"
-- Welcome sub: "간단한 정보 4가지만 알려주시면, / 받을 수 있는 정부지원금을 골라드릴게요."
+- Welcome: 텍스트 H1/서브 대신 브랜드 로고 이미지(`src/assets/logo.png`, alt="지원금콕365 - 정부
+  지원금 매칭 서비스")로 대체 — 와이어프레임의 "내 가게에 딱 맞는 지원금을 찾아드려요" 문구는
+  더 이상 쓰지 않음. 배경도 `--navy` → `--white`로 반전(design-tokens.md "Welcome 화면 예외" 참고).
 - Home label: "내 조건에 맞는 지원금 **N건**"
 - Step4 hint: "마지막이에요! 거의 다 됐어요"

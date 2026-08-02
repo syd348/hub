@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import logo from '../assets/logo.png'
 import './WelcomeScreen.css'
 
 const WELCOME_FEATURES = [
@@ -14,17 +15,7 @@ export default function WelcomeScreen() {
 
   return (
     <div className="welcome screen active">
-      <div className="welcome-icon">💰</div>
-      <h1>
-        내 가게에 딱 맞는
-        <br />
-        지원금을 찾아드려요
-      </h1>
-      <p>
-        간단한 정보 4가지만 알려주시면,
-        <br />
-        받을 수 있는 정부지원금을 골라드릴게요.
-      </p>
+      <img src={logo} alt="지원금콕365 - 정부 지원금 매칭 서비스" className="welcome-logo" />
 
       <div className="welcome-features">
         {WELCOME_FEATURES.map((feat) => (
