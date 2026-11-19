@@ -31,3 +31,15 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           BIZINFO_API_KEY: ${{ secrets.BIZINFO_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+  # Issue #151: GitHub auto-disables scheduled workflows in public repos after 60 days without
+  # repository activity (happened 2026-10-04). Re-enable this workflow via the API on every
+  # scheduled run to reset that timer — no dummy commits. Runs independently of `crawl`, so a
+  # failed crawl still keeps the schedule alive.
+  workflow-keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@f72ff1a1336129f29bf0166c0fd0ca6cf1bcb38c # v1.2.1
